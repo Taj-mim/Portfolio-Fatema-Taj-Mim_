@@ -1,38 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head >
+
+<head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatema Taj Mim|Portfolio</title>
-    <link rel="Stylesheet" href="style.css">
+
+    <title>Fatema Taj Mim | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
 </head>
+
 <body>
+
+    <!-- ================================
+         Navigation Bar
+    ================================= -->
+
     <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="About.html">About</a></li>
-            <li><a href="Skill.html">Skill</a></li>
-            <li><a href="Experience.html">Experience</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="Achievement.html">Achivements</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="Colormode.html"> 🌙</a></li> <!---letter will change--->
-            
-        </ul>
-       
-    </nav>
-    <br><br>
-      <div class="image">
-                 <img src="formal picture.png" alt="Profile Picture">
+
+        <div class="logo">
+            <a href="index.html">Fatema Taj Mim</a>
         </div>
-    <section class="intro">
-        <h2>Hello,This is</h2><h1>Fatema Taj Mim</h1>
-        <h2>Aspiring Full Stack Developer</h2>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="About.html">About</a>
+            </li>
+
+            <li>
+                <a href="Projects.html">Projects</a>
+            </li>
+
+            <li>
+                <a href="Contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================================
+         Hero Section
+    ================================= -->
+
+    <section class="hero">
+
+        <!-- Left Side -->
+        <div class="intro">
+
+            <p class="greeting">
+                Hello, This is
+            </p>
+
+            <h1>
+                Fatema Taj Mim
+            </h1>
+
+            <h2>
+                Aspiring Full Stack Developer
+            </h2>
+
+            <p class="description">
+                I am a Computer Science and Engineering student passionate about
+                developing modern, responsive and user-friendly web applications.
+                I enjoy learning new technologies and building projects that
+                solve real-world problems.
+            </p>
+
+
+            <!-- Buttons -->
+            <div class="hero-buttons">
+
+                <button
+                    onclick="window.location.href='Contact.html'"
+                    class="btn contact-btn">
+                    Contact Me
+                </button>
+
+                <button
+                    onclick="window.location.href='resume.pdf'"
+                    class="btn resume-btn">
+                    View Resume
+                </button>
+
+            </div>
+
+
+            <!-- Social Links -->
+            <div class="social-links">
+
+                <a
+                    rel="https://github.com/Taj-mim"
+                    target="_blank">
+                    GitHub
+                </a>
+
+                <a rel="https://www.linkedin.com/in/taj-mim/"
+                    target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right Side / Profile Picture -->
+        <div class="image">
+
+            <img
+                src="image/formal picture.jpeg"
+                alt="Fatema Taj Mim Profile Picture">
+
+        </div>
+
     </section>
-   
-    <br>
-    <button onclick="window.location.href='Contact.html'" class="btn">Contact ME</button>
-    <button onclick="window.location.href='resume.pdf'" class="btn">View Resume</button>
-<srcipt src="script.js"></srcipt>
+
 </body>
+
 </html>

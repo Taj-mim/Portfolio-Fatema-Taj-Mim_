@@ -1,76 +1,508 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ========================================
+   General Settings
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.navbar{
-    position:sticky;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:5px 2%;
-    background:#fff;
-    box-shadow:0 2px 10px rgba(0,0,0,0.08);
-    z-index:1000;
+html {
+    scroll-behavior: smooth;
 }
 
-.nav-links{
-    margin-left: auto;
-    display:flex;
-    list-style:none;
-    gap:35px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:#333;
-    font-size:17px;
-    font-weight:500;
-    transition:0.3s;
-    display:inline-block;
+
+/* ========================================
+   Navigation Bar
+======================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+
+    padding: 0 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
 }
 
-.nav-links a:hover{
-    color:#000000;
-    transform:scale(1.1);
+
+/* Logo */
+
+.logo a {
+    text-decoration: none;
+
+    color: #2563eb;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    transition: 0.3s;
 }
-body    {
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-top: 40px;
-    margin-left: 64px;
-    margin-right: 64px;
-    margin-bottom: 64px;
-    border-style:none;
-    background-attachment:fixed;
-    background-color: rgb(255, 255, 255);
+
+.logo a:hover {
+    color: #1d4ed8;
 }
-a:hover{
-    color: #fbf4f4;
+
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #334155;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 5px 0;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Hover */
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* Active Link */
+
+.nav-links a.active {
+    color: #2563eb;
+}
+
+
+/* Active Link Underline */
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #2563eb;
+
+    border-radius: 5px;
+}
+
+
+/* ========================================
+   Hero Section
+======================================== */
+
+.hero {
+    min-height: calc(100vh - 75px);
+
+    padding: 80px 10%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+}
+
+
+/* ========================================
+   Introduction
+======================================== */
+
+.intro {
+    flex: 1;
+
+    max-width: 650px;
+}
+
+
+/* Greeting */
+
+.greeting {
+    color: #2563eb;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+/* Name */
+
+.intro h1 {
+    font-size: 58px;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    color: #0f172a;
+
+    margin-bottom: 15px;
+}
+
+
+/* Job Title */
+
+.intro h2 {
+    font-size: 29px;
+
+    font-weight: 600;
+
+    color: #475569;
+
+    margin-bottom: 20px;
+}
+
+
+/* Description */
+
+.description {
+    max-width: 600px;
+
+    font-size: 17px;
+
+    color: #64748b;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   Buttons
+======================================== */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 10px;
+}
+
+
+.btn {
+    padding: 13px 28px;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
     cursor: pointer;
-    zoom:10px;
-}
-.intro{
-    text-align: left;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:large;
-    max-width: 500px;
-}
-.btn{
-    background-color: rgb(0, 0, 0);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size:large;
-    color: rgb(255, 255, 255);
-    
 
+    transition: all 0.3s ease;
 }
 
-.image img{
-    width: 250px;
-    height:250px;
-    border-radius: 50%;
+
+/* Contact Button */
+
+.contact-btn {
+    background-color: #2563eb;
+
+    color: white;
+
+    border: 2px solid #2563eb;
+}
+
+.contact-btn:hover {
+    background-color: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+
+/* Resume Button */
+
+.resume-btn {
+    background-color: transparent;
+
+    color: #2563eb;
+
+    border: 2px solid #2563eb;
+}
+
+.resume-btn:hover {
+    background-color: #2563eb;
+
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   Social Links
+======================================== */
+
+.social-links {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.social-links a {
+    text-decoration: none;
+
+    color: #475569;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2563eb;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   Profile Image
+======================================== */
+
+.image {
+    flex: 0 0 350px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.image img {
+    width: 330px;
+    height: 330px;
+
     object-fit: cover;
-    margin-left: auto;
+
+    border-radius: 50%;
+
+    border: 7px solid #ffffff;
+
+    box-shadow:
+        0 15px 40px rgba(37, 99, 235, 0.20);
+
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+
+/* ========================================
+   Tablet
+======================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 60px 6%;
+
+        gap: 40px;
+    }
+
+    .intro h1 {
+        font-size: 45px;
+    }
+
+    .intro h2 {
+        font-size: 24px;
+    }
+
+    .image {
+        flex: 0 0 280px;
+    }
+
+    .image img {
+        width: 270px;
+        height: 270px;
+    }
+}
+
+
+/* ========================================
+   Mobile
+======================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 20px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .logo a {
+        font-size: 22px;
+    }
+
+
+    .nav-links {
+        gap: 18px;
+    }
+
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    .hero {
+        padding: 60px 5%;
+
+        flex-direction: column-reverse;
+
+        text-align: center;
+    }
+
+
+    .image {
+        flex: none;
+    }
+
+
+    .image img {
+        width: 240px;
+        height: 240px;
+    }
+
+
+    .intro {
+        max-width: 100%;
+    }
+
+
+    .intro h1 {
+        font-size: 40px;
+    }
+
+
+    .intro h2 {
+        font-size: 22px;
+    }
+
+
+    .greeting {
+        font-size: 18px;
+    }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+
+/* ========================================
+   Small Mobile
+======================================== */
+
+@media (max-width: 450px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    .image img {
+        width: 200px;
+        height: 200px;
+    }
+
+
+    .intro h1 {
+        font-size: 34px;
+    }
+
+
+    .intro h2 {
+        font-size: 20px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .btn {
+        width: 100%;
+
+        max-width: 220px;
+    }
 }
