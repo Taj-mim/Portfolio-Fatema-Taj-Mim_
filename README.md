@@ -59,16 +59,16 @@ portfolio/
 Clone the repository:
 
 ```bash
-git clone https://github.com/Taj-mim/portfolio.git
+git clone https://github.com/Taj-mim/Portfolio-Fatema-Taj-Mim_
 ```
 
 Open the project folder:
 
 ```bash
-cd portfolio
+cd Portfolio-Fatema-Taj-Mim_
 ```
 
-Then open `index.html` in your browser.
+Then open `front.html` in your browser.
 
 You can also use **VS Code Live Server** for development.
 
