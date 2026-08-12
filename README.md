@@ -44,7 +44,7 @@ Currently, I am focused on strengthening my backend engineering skills while pro
 ```text
 portfolio/
 │
-├── index.html
+├── front.html
 ├── style.css
 ├── script.js
 │
