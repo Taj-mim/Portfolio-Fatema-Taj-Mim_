@@ -1,15 +1,10 @@
 
-// ========================================
-// Portfolio JavaScript
-// ========================================
-
 
 // Wait until the HTML page is completely loaded
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ========================================
+
     // Profile Image Animation
-    // ========================================
 
     const profileImage = document.querySelector(".image img");
 
@@ -22,12 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
         profileImage.addEventListener("mouseleave", function () {
             profileImage.style.transform = "scale(1)";
         });
+
     }
 
 
-    // ========================================
     // Button Click Effects
-    // ========================================
 
     const buttons = document.querySelectorAll(".btn");
 
@@ -46,30 +40,56 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // ========================================
     // Navigation Active Link
-    // ========================================
 
-    const currentPage = window.location.pathname.split("/").pop();
-
+    const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav-links a");
 
-    navLinks.forEach(function (link) {
+    function updateActiveLink() {
 
-        const linkPage = link.getAttribute("href");
+        let currentSection = "";
 
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-        }
+        sections.forEach(function (section) {
 
-    });
+            const sectionTop = section.offsetTop - 150;
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
+                currentSection = section.id;
+            }
+
+        });
+
+        navLinks.forEach(function (link) {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") === "#" + currentSection
+            ) {
+                link.classList.add("active");
+            }
+
+        });
+
+    }
 
 
-    // ========================================
+    // Detect scrolling
+    window.addEventListener("scroll", updateActiveLink);
+
+    // Check when page first loads
+    updateActiveLink();
+
+
+
     // Welcome Message
-    // ========================================
+ 
 
     console.log("Welcome to Fatema Taj Mim's Portfolio!");
 
 });
-
