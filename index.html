@@ -15,9 +15,7 @@
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
+
 
 
 </head>
@@ -858,7 +856,7 @@
 
     <div class="contact-wrapper">
 
-        <!-- LEFT: SEND MESSAGE -->
+     <!-- LEFT: SEND MESSAGE -->
 <div class="contact-card message-card">
 
     <h2>Send a Message</h2>
@@ -874,6 +872,7 @@
         method="POST"
     >
 
+        <!-- Name -->
         <input
             type="text"
             name="name"
@@ -881,6 +880,7 @@
             required
         >
 
+        <!-- Email -->
         <input
             type="email"
             name="email"
@@ -888,6 +888,7 @@
             required
         >
 
+        <!-- Message -->
         <textarea
             name="message"
             placeholder="Your Message"
@@ -895,6 +896,8 @@
             required
         ></textarea>
 
+
+        <!-- FormSubmit settings -->
         <input
             type="hidden"
             name="_subject"
@@ -907,22 +910,33 @@
             value="true"
         >
 
+
+        <!-- Send Button -->
         <button
             type="submit"
-            class="send-message-btn"
             id="send-message-btn"
+            class="send-message-btn"
         >
+
             <span class="send-icon">➤</span>
-            <span class="button-text">Send Message</span>
+
+            <span class="button-text">
+                Send Message
+            </span>
+
         </button>
 
-        <!-- Success/Error message -->
-        <p id="form-message" class="form-message"></p>
+
+        <!-- Success / Error Message -->
+        <p
+            id="form-message"
+            class="form-message"
+            aria-live="polite"
+        ></p>
 
     </form>
 
 </div>
-
         <!-- RIGHT: CONTACT INFORMATION -->
         <div class="contact-card information-card">
 
@@ -1022,6 +1036,7 @@
 
 </footer>
 
+    <script src="script.js" defer></script>
 </body>
 
 </html>
