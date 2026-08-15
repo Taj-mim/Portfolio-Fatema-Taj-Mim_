@@ -859,61 +859,69 @@
     <div class="contact-wrapper">
 
         <!-- LEFT: SEND MESSAGE -->
-        <div class="contact-card message-card">
+<div class="contact-card message-card">
 
-            <h2>Send a Message</h2>
+    <h2>Send a Message</h2>
 
-            <p class="contact-subtitle">
-                Fill out the form and I'll get back to you as soon as possible.
-            </p>
+    <p class="contact-subtitle">
+        Fill out the form and I'll get back to you as soon as possible.
+    </p>
 
-           <form  class="contact-form" 
-                  action="https://formsubmit.co/tajmim915@gmail.com"
-                    method="POST">
+    <form
+        id="contact-form"
+        class="contact-form"
+        action="https://formsubmit.co/ajax/tajmim915@gmail.com"
+        method="POST"
+    >
 
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    required
-                >
+        <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+        >
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    required
-                >
+        <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+        >
 
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows="5"
-                    required
-                ></textarea>
+        <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            required
+        ></textarea>
 
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="New Portfolio Contact Message"
-                >
+        <input
+            type="hidden"
+            name="_subject"
+            value="New Portfolio Contact Message"
+        >
 
-                <input
-                    type="hidden"
-                    name="_captcha"
-                    value="true"
-                >
+        <input
+            type="hidden"
+            name="_captcha"
+            value="true"
+        >
 
+        <button
+            type="submit"
+            class="send-message-btn"
+            id="send-message-btn"
+        >
+            <span class="send-icon">➤</span>
+            <span class="button-text">Send Message</span>
+        </button>
 
-                <button type="submit" class="send-message-btn">
-                    <span class="send-icon">➤</span>
-                    Send Message
-                </button>
+        <!-- Success/Error message -->
+        <p id="form-message" class="form-message"></p>
 
-            </form>
+    </form>
 
-        </div>
-
+</div>
 
         <!-- RIGHT: CONTACT INFORMATION -->
         <div class="contact-card information-card">

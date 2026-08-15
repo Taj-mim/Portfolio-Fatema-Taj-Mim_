@@ -1377,7 +1377,38 @@ body {
     flex-direction: column;
     gap: 16px;
 }
+/* =========================================================
+   CONTACT FORM MESSAGE
+   ========================================================= */
 
+.form-message {
+    margin: 8px 0 0;
+    min-height: 21px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form-message.success {
+    color: #159957;
+}
+
+.form-message.error {
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   DISABLED SEND BUTTON
+   ========================================================= */
+
+.send-message-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
 
 /* =========================================================
    FORM INPUTS
@@ -1688,7 +1719,11 @@ body {
         max-width: 920px;
     }
 
-
+ .form-message {
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 0 5px;
+    }
     /* ---------- NAVBAR ---------- */
 
     .navbar {
@@ -2312,7 +2347,12 @@ body {
         padding: 10px 12px;
         margin-bottom: 10px;
     }
-
+.form-message {
+        margin-top: 7px;
+        font-size: 13px;
+        line-height: 1.5;
+        padding: 0 4px;
+    }
     .info-icon {
         width: 40px;
         height: 40px;
@@ -2681,7 +2721,13 @@ body {
         padding: 8px 10px;
         gap: 10px;
     }
-
+.form-message {
+        margin-top: 6px;
+        min-height: 20px;
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 0 2px;
+    }
     .info-icon {
         width: 36px;
         height: 36px;
@@ -2818,6 +2864,10 @@ body {
 
     .contact-card {
         padding: 15px;
+    }
+.form-message {
+        font-size: 11px;
+        line-height: 1.5;
     }
 
     .info-text strong {
