@@ -1662,7 +1662,6 @@ body {
 .footer p {
     margin: 0;
 }
-
 /* =========================================================
    RESPONSIVE DESIGN
    Tablet → Mobile → Small Mobile
@@ -1676,34 +1675,28 @@ body {
 
 @media (max-width: 1100px) {
 
-    /* =====================================================
-       GENERAL
-       ===================================================== */
+    /* ---------- GENERAL ---------- */
 
-    html,
     body {
-        width: 100%;
-        max-width: 100%;
         overflow-x: hidden;
     }
 
-    * {
-        box-sizing: border-box;
+    .container,
+    .about-container,
+    .projects-grid,
+    .contact-wrapper {
+        max-width: 920px;
     }
 
 
-    /* =====================================================
-       NAVBAR
-       ===================================================== */
+    /* ---------- NAVBAR ---------- */
 
     .navbar {
-        width: 100%;
         padding: 16px 5%;
     }
 
     .logo {
-        font-size: 22px;
-        white-space: nowrap;
+        font-size: 24px;
     }
 
     .nav-links {
@@ -1712,107 +1705,45 @@ body {
 
     .nav-links a {
         font-size: 14px;
-        white-space: nowrap;
     }
 
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+    /* ---------- HERO ---------- */
 
     .hero {
-        width: 100%;
-        min-height: 0;
         padding: 75px 5%;
-
-        display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        align-items: center;
         gap: 40px;
-
-        overflow: hidden;
     }
 
     .intro {
-        width: 100%;
-    }
-
-    .greeting {
-        font-size: 18px;
+        max-width: 600px;
     }
 
     .hero h1 {
         font-size: 52px;
-        line-height: 1.1;
     }
 
     .hero h2 {
-        font-size: 34px;
-        line-height: 1.2;
+        font-size: 32px;
     }
 
-    .description {
+    .hero p {
         font-size: 16px;
-        line-height: 1.7;
         max-width: 650px;
     }
 
-
-    /* =====================================================
-       HERO IMAGE
-       ===================================================== */
-
-    .image {
-        width: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        position: relative;
-    }
-
     .image img {
-        width: 100%;
-        max-width: 390px;
-        height: auto;
-
-        display: block;
+        width: 380px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 50%;
     }
 
 
-    /* =====================================================
-       HERO BUTTONS
-       ===================================================== */
-
-    .hero-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-
-    /* =====================================================
-       SOCIAL LINKS
-       ===================================================== */
-
-    .social-links {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-    }
-
-
-    /* =====================================================
-       ABOUT
-       ===================================================== */
+    /* ---------- ABOUT ---------- */
 
     .about-section {
         padding: 75px 5%;
-    }
-
-    .about-container {
-        max-width: 920px;
     }
 
     .about-content {
@@ -1828,9 +1759,7 @@ body {
     }
 
 
-    /* =====================================================
-       SKILLS
-       ===================================================== */
+    /* ---------- SKILLS ---------- */
 
     .skills-section {
         padding: 75px 5%;
@@ -1842,9 +1771,7 @@ body {
     }
 
 
-    /* =====================================================
-       PROJECTS
-       ===================================================== */
+    /* ---------- PROJECTS ---------- */
 
     .projects-section {
         padding: 70px 5%;
@@ -1864,9 +1791,7 @@ body {
     }
 
 
-    /* =====================================================
-       CONTACT
-       ===================================================== */
+    /* ---------- CONTACT ---------- */
 
     .contact-section {
         padding: 70px 5%;
@@ -1890,30 +1815,25 @@ body {
 
 @media (max-width: 768px) {
 
-    /* =====================================================
-       GENERAL
-       ===================================================== */
+    /* ---------- GENERAL ---------- */
 
-    html,
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
-        width: 100%;
-        max-width: 100%;
         overflow-x: hidden;
-    }
-
-    * {
-        box-sizing: border-box;
+        width: 100%;
     }
 
 
     /* =====================================================
-       NAVBAR
+       NAVIGATION
        ===================================================== */
 
     .navbar {
         width: 100%;
-        min-height: 62px;
-
+        box-sizing: border-box;
         padding: 14px 20px;
 
         display: flex;
@@ -1924,25 +1844,20 @@ body {
     }
 
     .logo {
-        font-size: 20px;
-        line-height: 1;
-
+        font-size: 21px;
+        line-height: 1.1;
         white-space: nowrap;
-        flex-shrink: 0;
     }
 
     .nav-links {
         display: flex;
         align-items: center;
-
-        gap: 14px;
-
+        gap: 13px;
         flex-wrap: nowrap;
-        white-space: nowrap;
     }
 
     .nav-links a {
-        font-size: 13px;
+        font-size: 12px;
         white-space: nowrap;
     }
 
@@ -1953,87 +1868,74 @@ body {
 
     .hero {
         width: 100%;
-        min-height: 0 !important;
+        box-sizing: border-box;
 
-        padding: 45px 24px 55px;
+        min-height: 0;
 
-        display: flex !important;
-        flex-direction: column !important;
+        padding: 45px 6% 55px;
 
-        align-items: center !important;
-        justify-content: flex-start !important;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
 
         gap: 0;
 
         text-align: center;
-
-        overflow: hidden;
     }
 
 
     /* =====================================================
        PROFILE IMAGE
-       
-       IMPORTANT:
-       Image appears FIRST on mobile
+       Picture comes FIRST on mobile
        ===================================================== */
 
     .image {
         order: 1;
 
         width: 100%;
-        max-width: 330px;
-
-        margin: 0 auto 40px;
 
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
 
-        position: relative !important;
+        margin-bottom: 55px;
 
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-
-        transform: none !important;
+        position: relative;
     }
 
     .image img {
-        width: 100%;
-        max-width: 330px;
-
-        height: auto;
-
         display: block;
 
-        margin: 0 auto;
+        width: 280px;
+        height: 280px;
 
-        position: relative !important;
+        max-width: 80vw;
+        max-height: 80vw;
 
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        bottom: auto !important;
+        object-fit: cover;
 
-        transform: none !important;
+        border-radius: 50%;
+
+        border: 8px solid #ffffff;
+
+        box-sizing: border-box;
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.12);
     }
 
 
     /* =====================================================
        INTRO
-       
-       Appears AFTER IMAGE on mobile
+       Comes AFTER picture
        ===================================================== */
 
     .intro {
         order: 2;
 
         width: 100%;
-        max-width: 600px;
-
-        margin: 0 auto;
+        max-width: 680px;
 
         display: flex;
         flex-direction: column;
@@ -2043,69 +1945,47 @@ body {
     }
 
 
-    /* =====================================================
-       GREETING
-       ===================================================== */
+    /* ---------- GREETING ---------- */
 
     .greeting {
-        width: 100%;
+        margin: 0 0 15px;
 
-        margin: 0 0 10px;
-
-        font-size: 18px;
-        line-height: 1.4;
-
-        text-align: center;
+        font-size: 22px;
+        line-height: 1.3;
     }
 
 
-    /* =====================================================
-       NAME
-       ===================================================== */
+    /* ---------- NAME ---------- */
 
     .hero h1 {
-        width: 100%;
-
-        margin: 0 0 12px;
+        margin: 0 0 14px;
 
         font-size: 42px;
-        line-height: 1.12;
-
-        text-align: center;
+        line-height: 1.15;
 
         word-break: normal;
-        overflow-wrap: normal;
     }
 
 
-    /* =====================================================
-       JOB TITLE
-       ===================================================== */
+    /* ---------- TITLE ---------- */
 
     .hero h2 {
-        width: 100%;
+        margin: 0 0 24px;
 
-        margin: 0 0 20px;
+        font-size: 28px;
+        line-height: 1.25;
 
-        font-size: 30px;
-        line-height: 1.2;
-
-        text-align: center;
-
-        word-break: normal;
-        overflow-wrap: normal;
+        max-width: 100%;
     }
 
 
-    /* =====================================================
-       DESCRIPTION
-       ===================================================== */
+    /* ---------- DESCRIPTION ---------- */
 
-    .description {
+    .hero .description {
         width: 100%;
-        max-width: 560px;
+        max-width: 620px;
 
-        margin: 0 auto 25px;
+        margin: 0 auto 30px;
 
         font-size: 15px;
         line-height: 1.7;
@@ -2122,22 +2002,22 @@ body {
         width: 100%;
 
         display: flex;
-        align-items: center;
         justify-content: center;
-
-        flex-wrap: wrap;
+        align-items: center;
 
         gap: 12px;
 
-        margin: 0 auto;
+        flex-wrap: wrap;
+
+        margin-bottom: 28px;
     }
 
     .hero-buttons .btn {
-        min-width: 180px;
+        min-width: 190px;
 
-        padding: 12px 18px;
+        padding: 13px 20px;
 
-        text-align: center;
+        box-sizing: border-box;
     }
 
 
@@ -2149,16 +2029,27 @@ body {
         width: 100%;
 
         display: flex;
-        align-items: center;
+
         justify-content: center;
+        align-items: center;
 
-        gap: 25px;
+        gap: 28px;
 
-        margin-top: 25px;
+        margin: 0 0 22px;
+
+        position: static;
     }
 
     .social-links a {
-        white-space: nowrap;
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 7px;
+
+        font-size: 15px;
+
+        text-decoration: none;
     }
 
 
@@ -2167,6 +2058,8 @@ body {
        ===================================================== */
 
     .scroll-explore {
+        position: static !important;
+
         display: flex;
 
         flex-direction: column;
@@ -2174,11 +2067,19 @@ body {
         align-items: center;
         justify-content: center;
 
-        gap: 4px;
+        gap: 2px;
 
-        margin-top: 25px;
+        margin-top: 0;
 
-        text-align: center;
+        text-decoration: none;
+
+        font-size: 13px;
+    }
+
+    .scroll-explore .arrow {
+        font-size: 22px;
+
+        line-height: 1;
     }
 
 
@@ -2193,7 +2094,6 @@ body {
     .section-heading h2,
     .projects-section .section-heading h2 {
         font-size: 32px;
-        line-height: 1.2;
     }
 
     .section-heading p,
@@ -2237,9 +2137,7 @@ body {
 
     .about-details {
         display: grid;
-
         grid-template-columns: 1fr 1fr;
-
         gap: 15px;
     }
 
@@ -2270,7 +2168,6 @@ body {
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
-
         gap: 15px;
     }
 
@@ -2302,7 +2199,6 @@ body {
 
     .projects-grid {
         grid-template-columns: 1fr 1fr;
-
         gap: 16px;
     }
 
@@ -2317,7 +2213,6 @@ body {
     .project-number {
         top: 10px;
         right: 12px;
-
         font-size: 10px;
     }
 
@@ -2338,7 +2233,6 @@ body {
     .project-content p {
         font-size: 12px;
         line-height: 1.55;
-
         margin-bottom: 13px;
     }
 
@@ -2372,13 +2266,11 @@ body {
 
     .contact-wrapper {
         grid-template-columns: 1fr;
-
         gap: 18px;
     }
 
     .contact-card {
         padding: 22px;
-
         border-radius: 15px;
     }
 
@@ -2388,7 +2280,6 @@ body {
 
     .contact-subtitle {
         font-size: 13px;
-
         margin-bottom: 20px;
     }
 
@@ -2403,7 +2294,6 @@ body {
     .contact-form input,
     .contact-form textarea {
         padding: 12px 14px;
-
         font-size: 13px;
     }
 
@@ -2413,26 +2303,20 @@ body {
 
     .send-message-btn {
         height: 45px;
-
         font-size: 13px;
     }
 
     .contact-info-item {
         min-height: 65px;
-
         gap: 12px;
-
         padding: 10px 12px;
-
         margin-bottom: 10px;
     }
 
     .info-icon {
         width: 40px;
         height: 40px;
-
         font-size: 18px;
-
         border-radius: 9px;
     }
 
@@ -2451,7 +2335,6 @@ body {
 
     .footer {
         padding: 17px 15px;
-
         font-size: 13px;
     }
 }
@@ -2469,15 +2352,11 @@ body {
        ===================================================== */
 
     .navbar {
-        min-height: 58px;
-
-        padding: 11px 14px;
+        padding: 12px 15px;
     }
 
     .logo {
-        font-size: 17px;
-
-        white-space: nowrap;
+        font-size: 18px;
     }
 
     .nav-links {
@@ -2486,8 +2365,6 @@ body {
 
     .nav-links a {
         font-size: 10px;
-
-        white-space: nowrap;
     }
 
 
@@ -2496,72 +2373,59 @@ body {
        ===================================================== */
 
     .hero {
-        padding: 35px 18px 45px;
+        padding: 35px 5% 45px;
     }
 
 
-    /* =====================================================
-       PROFILE IMAGE
-       ===================================================== */
+    /* ---------- ROUND PROFILE IMAGE ---------- */
 
     .image {
-        max-width: 270px;
-
-        margin-bottom: 32px;
+        margin-bottom: 42px;
     }
 
     .image img {
-        max-width: 270px;
+        width: 240px;
+        height: 240px;
+
+        max-width: 75vw;
+        max-height: 75vw;
+
+        border-radius: 50%;
+
+        border-width: 7px;
     }
 
 
-    /* =====================================================
-       GREETING
-       ===================================================== */
+    /* ---------- INTRO ---------- */
 
     .greeting {
-        font-size: 16px;
+        font-size: 19px;
 
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
-
-
-    /* =====================================================
-       NAME
-       ===================================================== */
 
     .hero h1 {
         font-size: 34px;
 
-        line-height: 1.12;
+        line-height: 1.15;
 
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
-
-
-    /* =====================================================
-       JOB TITLE
-       ===================================================== */
 
     .hero h2 {
-        font-size: 25px;
+        font-size: 24px;
 
-        line-height: 1.2;
+        line-height: 1.3;
 
-        margin-bottom: 18px;
+        margin-bottom: 20px;
     }
 
-
-    /* =====================================================
-       DESCRIPTION
-       ===================================================== */
-
-    .description {
-        max-width: 350px;
-
+    .hero .description {
         font-size: 13px;
 
-        line-height: 1.65;
+        line-height: 1.7;
+
+        margin-bottom: 25px;
     }
 
 
@@ -2575,18 +2439,18 @@ body {
         flex-direction: column;
 
         gap: 10px;
+
+        margin-bottom: 25px;
     }
 
     .hero-buttons .btn {
         width: 100%;
 
-        max-width: 310px;
-
         min-width: 0;
 
         padding: 12px 15px;
 
-        text-align: center;
+        font-size: 14px;
     }
 
 
@@ -2597,7 +2461,7 @@ body {
     .social-links {
         gap: 20px;
 
-        margin-top: 22px;
+        margin-bottom: 18px;
     }
 
     .social-links a {
@@ -2610,9 +2474,11 @@ body {
        ===================================================== */
 
     .scroll-explore {
-        margin-top: 22px;
+        font-size: 12px;
+    }
 
-        font-size: 13px;
+    .scroll-explore .arrow {
+        font-size: 20px;
     }
 
 
@@ -2627,7 +2493,6 @@ body {
     .section-heading h2,
     .projects-section .section-heading h2 {
         font-size: 27px;
-        line-height: 1.2;
     }
 
     .section-heading p,
@@ -2651,7 +2516,6 @@ body {
 
     .about-card {
         padding: 19px;
-
         border-radius: 14px;
     }
 
@@ -2665,7 +2529,6 @@ body {
 
     .about-details {
         grid-template-columns: 1fr;
-
         gap: 12px;
     }
 
@@ -2692,7 +2555,6 @@ body {
 
     .skills-grid {
         grid-template-columns: 1fr;
-
         gap: 12px;
     }
 
@@ -2706,7 +2568,6 @@ body {
 
     .skill-tags span {
         padding: 5px 8px;
-
         font-size: 10px;
     }
 
@@ -2721,7 +2582,6 @@ body {
 
     .projects-grid {
         grid-template-columns: 1fr;
-
         gap: 15px;
     }
 
@@ -2751,19 +2611,16 @@ body {
 
     .project-content p {
         font-size: 13px;
-
         line-height: 1.6;
     }
 
     .project-tech span {
         font-size: 10px;
-
         padding: 5px 7px;
     }
 
     .project-btn {
         padding: 9px 10px;
-
         font-size: 10px;
     }
 
@@ -2782,7 +2639,6 @@ body {
 
     .contact-card {
         padding: 18px;
-
         border-radius: 14px;
     }
 
@@ -2792,7 +2648,6 @@ body {
 
     .contact-subtitle {
         font-size: 12px;
-
         line-height: 1.6;
     }
 
@@ -2807,9 +2662,7 @@ body {
     .contact-form input,
     .contact-form textarea {
         font-size: 13px;
-
         padding: 11px 12px;
-
         border-radius: 8px;
     }
 
@@ -2819,24 +2672,19 @@ body {
 
     .send-message-btn {
         height: 43px;
-
         font-size: 13px;
-
         border-radius: 8px;
     }
 
     .contact-info-item {
         min-height: 60px;
-
         padding: 8px 10px;
-
         gap: 10px;
     }
 
     .info-icon {
         width: 36px;
         height: 36px;
-
         font-size: 16px;
     }
 
@@ -2859,7 +2707,6 @@ body {
 
     .footer {
         padding: 15px 10px;
-
         font-size: 12px;
     }
 }
@@ -2872,16 +2719,14 @@ body {
 
 @media (max-width: 360px) {
 
-    /* =====================================================
-       NAVBAR
-       ===================================================== */
+    /* ---------- NAVBAR ---------- */
 
     .navbar {
-        padding: 10px 9px;
+        padding: 11px 10px;
     }
 
     .logo {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .nav-links {
@@ -2893,68 +2738,57 @@ body {
     }
 
 
-    /* =====================================================
-       HERO
-       ===================================================== */
+    /* ---------- HERO ---------- */
 
     .hero {
-        padding: 30px 14px 40px;
+        padding: 30px 4% 40px;
     }
 
-
-    /* Profile image */
-
     .image {
-        max-width: 235px;
-
-        margin-bottom: 28px;
+        margin-bottom: 35px;
     }
 
     .image img {
-        max-width: 235px;
+        width: 210px;
+        height: 210px;
+
+        max-width: 70vw;
+        max-height: 70vw;
+
+        border-radius: 50%;
+
+        border-width: 6px;
     }
-
-
-    /* Greeting */
 
     .greeting {
-        font-size: 15px;
+        font-size: 17px;
     }
-
-
-    /* Name */
 
     .hero h1 {
         font-size: 30px;
     }
 
-
-    /* Job title */
-
     .hero h2 {
-        font-size: 22px;
+        font-size: 21px;
     }
 
-
-    /* Description */
-
-    .description {
+    .hero .description {
         font-size: 12px;
-
-        line-height: 1.65;
     }
 
 
-    /* Buttons */
+    /* ---------- SOCIAL ---------- */
 
-    .hero-buttons .btn {
-        max-width: 280px;
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-links a {
+        font-size: 13px;
     }
 
 
-    /* =====================================================
-       OTHER SECTIONS
-       ===================================================== */
+    /* ---------- SECTIONS ---------- */
 
     .projects-section,
     .about-section,
@@ -2965,9 +2799,7 @@ body {
     }
 
 
-    /* =====================================================
-       PROJECTS
-       ===================================================== */
+    /* ---------- PROJECT ---------- */
 
     .project-content {
         padding: 15px;
@@ -2982,9 +2814,7 @@ body {
     }
 
 
-    /* =====================================================
-       CONTACT
-       ===================================================== */
+    /* ---------- CONTACT ---------- */
 
     .contact-card {
         padding: 15px;
