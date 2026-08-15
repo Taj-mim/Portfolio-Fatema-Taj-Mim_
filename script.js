@@ -2,33 +2,31 @@
    FATEMA TAJ MIM - PORTFOLIO JAVASCRIPT
    ========================================================= */
 
-/* =========================================================
-   CONTACT FORM - AJAX SUBMISSION
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       CONTACT FORM - AJAX SUBMISSION
+       ===================================================== */
 
     const contactForm = document.getElementById("contact-form");
     const sendButton = document.getElementById("send-message-btn");
-    const buttonText = sendButton?.querySelector(".button-text");
+    const buttonText = sendButton
+        ? sendButton.querySelector(".button-text")
+        : null;
+
     const formMessage = document.getElementById("form-message");
 
 
-    /* =====================================================
-       CONTACT FORM
-       ===================================================== */
-
-    if (contactForm) {
+    if (contactForm && sendButton && buttonText && formMessage) {
 
         contactForm.addEventListener("submit", async function (event) {
 
-            // VERY IMPORTANT:
-            // Prevent FormSubmit from opening its Thank You page
+            // IMPORTANT:
+            // Stop the normal FormSubmit redirect.
             event.preventDefault();
 
             // Disable button
             sendButton.disabled = true;
-
             buttonText.textContent = "Sending...";
 
             // Clear previous message
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             formMessage.className = "form-message";
 
 
-            // Get form data
+            // Collect form data
             const formData = new FormData(contactForm);
 
 
@@ -56,14 +54,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                const data = await response.json();
+                /*
+                 * Get response as text first.
+                 *
+                 * This prevents JSON parsing from crashing
+                 * if FormSubmit sends a non-JSON response.
+                 */
+
+                const responseText = await response.text();
+
+                console.log("FormSubmit response:", responseText);
 
 
-                /* =========================================
+                let data = {};
+
+                try {
+                    data = JSON.parse(responseText);
+                } catch (jsonError) {
+                    console.log("Response was not JSON.");
+                }
+
+
+                /* =================================================
                    SUCCESS
-                   ========================================= */
+                   ================================================= */
 
-                if (response.ok && data.success) {
+                if (
+                    response.ok &&
+                    (
+                        data.success === true ||
+                        data.success === "true"
+                    )
+                ) {
 
                     formMessage.textContent =
                         "✓ Message sent successfully! Thank you for contacting me.";
@@ -75,14 +97,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     contactForm.reset();
 
 
-                    // Keep user on portfolio
-                    // NO REDIRECT
+                    /*
+                     * IMPORTANT:
+                     * There is NO redirect here.
+                     *
+                     * The visitor stays on your portfolio.
+                     */
+
+                }
 
 
-                } else {
+                /* =================================================
+                   ERROR
+                   ================================================= */
+
+                else {
 
                     throw new Error(
-                        data.message || "Something went wrong."
+                        data.message ||
+                        "Unable to send message."
                     );
 
                 }
@@ -101,15 +134,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 formMessage.classList.add("error");
 
-
-            } finally {
-
-                // Enable button again
-                sendButton.disabled = false;
-
-                buttonText.textContent = "Send Message";
-
             }
+
+
+            /* =================================================
+               ENABLE BUTTON AGAIN
+               ================================================= */
+
+            sendButton.disabled = false;
+
+            buttonText.textContent = "Send Message";
 
         });
 
@@ -122,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const profileImage =
         document.querySelector(".image img");
+
 
     if (profileImage) {
 
@@ -156,21 +191,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttons =
         document.querySelectorAll(".btn");
 
+
     buttons.forEach(function (button) {
 
-        button.addEventListener("click", function () {
+        button.addEventListener(
+            "click",
+            function () {
 
-            button.style.transform =
-                "scale(0.97)";
+                button.style.transform =
+                    "scale(0.97)";
 
 
-            setTimeout(function () {
+                setTimeout(function () {
 
-                button.style.transform = "";
+                    button.style.transform = "";
 
-            }, 150);
+                }, 150);
 
-        });
+            }
+        );
 
     });
 

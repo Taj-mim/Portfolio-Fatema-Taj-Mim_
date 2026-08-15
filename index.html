@@ -866,76 +866,64 @@
     </p>
 
     <form
-        id="contact-form"
-        class="contact-form"
-        action="https://formsubmit.co/ajax/tajmim915@gmail.com"
-        method="POST"
+    id="contact-form"
+    class="contact-form"
+    action="https://formsubmit.co/ajax/tajmim915@gmail.com"
+    method="POST"
+>
+
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
     >
 
-        <!-- Name -->
-        <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-        >
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+    >
 
-        <!-- Email -->
-        <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-        >
+    <textarea
+        name="message"
+        placeholder="Your Message"
+        rows="5"
+        required
+    ></textarea>
 
-        <!-- Message -->
-        <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-        ></textarea>
+    <input
+        type="hidden"
+        name="_subject"
+        value="New Portfolio Contact Message"
+    >
 
+    <input
+        type="hidden"
+        name="_captcha"
+        value="true"
+    >
 
-        <!-- FormSubmit settings -->
-        <input
-            type="hidden"
-            name="_subject"
-            value="New Portfolio Contact Message"
-        >
+    <button
+        type="submit"
+        id="send-message-btn"
+        class="send-message-btn"
+    >
+        <span class="send-icon">➤</span>
 
-        <input
-            type="hidden"
-            name="_captcha"
-            value="true"
-        >
+        <span class="button-text">
+            Send Message
+        </span>
+    </button>
 
+    <p
+        id="form-message"
+        class="form-message"
+        aria-live="polite"
+    ></p>
 
-        <!-- Send Button -->
-        <button
-            type="submit"
-            id="send-message-btn"
-            class="send-message-btn"
-        >
-
-            <span class="send-icon">➤</span>
-
-            <span class="button-text">
-                Send Message
-            </span>
-
-        </button>
-
-
-        <!-- Success / Error Message -->
-        <p
-            id="form-message"
-            class="form-message"
-            aria-live="polite"
-        ></p>
-
-    </form>
-
+</form>
 </div>
         <!-- RIGHT: CONTACT INFORMATION -->
         <div class="contact-card information-card">
