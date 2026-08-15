@@ -432,7 +432,7 @@ body {
     display: inline-block;
     margin-bottom: 10px;
 
-    font-size: 20px;
+    font-size: 35px;
     letter-spacing: 3px;
     font-weight: 600;
     color: #060606;
@@ -1720,7 +1720,7 @@ body {
     }
 
     .hero h1 {
-        font-size: 52px;
+        font-size: 40px;
     }
 
     .hero h2 {
@@ -1960,7 +1960,7 @@ body {
     .hero h1 {
         margin: 0 0 14px;
 
-        font-size: 42px;
+        font-size: 35px;
         line-height: 1.15;
 
         word-break: normal;
